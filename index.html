@@ -1,73 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Spill It Out</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spill It Out 💬</title>
+
   <style>
     body {
-      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #ff8a00, #e52e71);
+      font-family: "Poppins", sans-serif;
+      color: white;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
       margin: 0;
     }
-    .form-container {
-      background: white;
-      padding: 2rem;
+
+    .container {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 30px 40px;
       border-radius: 20px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-      width: 320px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+      width: 350px;
       text-align: center;
+      backdrop-filter: blur(10px);
     }
+
+    h1 {
+      margin-bottom: 10px;
+      font-size: 1.8em;
+    }
+
+    p {
+      font-size: 0.9em;
+      color: #fceff1;
+      margin-bottom: 20px;
+    }
+
     input, textarea {
       width: 100%;
-      margin: 10px 0;
       padding: 10px;
-      border-radius: 10px;
-      border: 1px solid #ccc;
-    }
-    button {
-      background: #ff758c;
-      color: white;
+      margin: 10px 0;
       border: none;
-      padding: 10px 20px;
+      border-radius: 10px;
+      outline: none;
+      font-family: inherit;
+      resize: none;
+    }
+
+    button {
+      background: #ffffff;
+      color: #e52e71;
+      border: none;
+      padding: 10px 25px;
       border-radius: 10px;
       cursor: pointer;
-      font-size: 16px;
+      transition: all 0.3s ease;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background: #f1f1f1;
+      transform: scale(1.05);
+    }
+
+    footer {
+      margin-top: 15px;
+      font-size: 0.8em;
+      opacity: 0.8;
     }
   </style>
 </head>
+
 <body>
-  <div class="form-container">
-    <h2>Spill It Out 💬</h2>
-    <form id="contactForm">
-      <input type="text" id="name" placeholder="Your name (optional)">
-      <input type="email" id="email" placeholder="Your email">
-      <textarea id="message" rows="4" placeholder="Type your secret..."></textarea>
+  <div class="container">
+    <h1>Spill It Out 💌</h1>
+    <p>Share your thoughts, secrets, or confessions anonymously.</p>
+
+    <form action="https://formspree.io/f/xovpvanr" method="POST">
+      <textarea name="message" rows="5" placeholder="Type your message..." required></textarea>
+      <input type="email" name="email" placeholder="Your email (optional)" />
       <button type="submit">Send</button>
     </form>
-    <p id="status"></p>
+
+    <footer>Made with ❤ by Dhyana</footer>
   </div>
-
-  <script>
-    document.getElementById("contactForm").addEventListener("submit", function(event){
-      event.preventDefault();
-
-      const email = document.getElementById("email").value;
-      const message = document.getElementById("message").value;
-
-      if(!email || !message){
-        document.getElementById("status").textContent = "Please fill out all fields.";
-        return;
-      }
-
-      // Simulate success (since GitHub Pages has no backend)
-      document.getElementById("status").textContent = "Message sent successfully ✅ (demo mode)";
-      document.getElementById("contactForm").reset();
-    });
-  </script>
 </body>
 </html>
