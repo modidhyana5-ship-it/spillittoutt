@@ -5,184 +5,69 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Spill It Out</title>
   <style>
-    /* ✨ Animated Gradient Background */
     body {
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(-45deg, #89f7fe, #66a6ff, #fcb045, #fd1d1d);
-      background-size: 400% 400%;
-      animation: gradientBG 10s ease infinite;
-      color: #fff;
-      text-align: center;
-      margin: 0;
-      padding: 0;
-      min-height: 100vh;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
+      height: 100vh;
+      margin: 0;
     }
-
-    @keyframes gradientBG {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    h1 {
-      font-size: 2.8em;
-      text-shadow: 2px 2px 8px rgba(0,0,0,0.2);
-      margin-bottom: 0.2em;
-    }
-
-    p {
-      color: #f1f1f1;
-      font-size: 1.1em;
-      margin-bottom: 30px;
-    }
-
-    /* 💌 Glass Form */
-    form {
-      background: rgba(255, 255, 255, 0.15);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-      padding: 25px;
-      width: 90%;
-      max-width: 400px;
+    .form-container {
+      background: white;
+      padding: 2rem;
       border-radius: 20px;
-      border: 1px solid rgba(255, 255, 255, 0.4);
-      box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.25);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      width: 320px;
+      text-align: center;
     }
-
-    form:hover {
-      transform: translateY(-5px);
-      box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.35);
-    }
-
     input, textarea {
       width: 100%;
-      padding: 12px;
       margin: 10px 0;
+      padding: 10px;
       border-radius: 10px;
-      border: 1px solid rgba(255,255,255,0.5);
-      background: rgba(255,255,255,0.2);
-      color: #fff;
-      font-size: 1em;
-      outline: none;
-      transition: all 0.3s ease;
+      border: 1px solid #ccc;
     }
-
-    input::placeholder, textarea::placeholder {
-      color: rgba(255,255,255,0.7);
-    }
-
-    input:focus, textarea:focus {
-      border-color: #89f7fe;
-      box-shadow: 0 0 10px rgba(137, 247, 254, 0.8);
-    }
-
-    /* 🚀 Neon Button */
     button {
-      background: linear-gradient(45deg, #66a6ff, #89f7fe);
+      background: #ff758c;
       color: white;
-      padding: 12px 20px;
       border: none;
+      padding: 10px 20px;
       border-radius: 10px;
       cursor: pointer;
-      font-size: 1.1em;
-      font-weight: 600;
-      transition: all 0.3s ease, box-shadow 0.3s ease;
-      width: 100%;
-      letter-spacing: 0.5px;
-      box-shadow: 0 0 10px rgba(137, 247, 254, 0.5);
-    }
-
-    button:hover {
-      transform: scale(1.08);
-      background: linear-gradient(45deg, #5a8bff, #6ff7d9);
-      box-shadow: 0 0 25px rgba(111, 247, 217, 0.9), 0 0 50px rgba(137, 247, 254, 0.8);
-      text-shadow: 0 0 8px rgba(255,255,255,0.8);
-    }
-
-    footer {
-      margin-top: 40px;
-      font-size: 0.9em;
-      color: #f8f8f8;
-    }
-
-    /* ✅ Frosted Success Popup */
-    #successMessage {
-      display: none;
-      background: rgba(255, 255, 255, 0.25);
-      backdrop-filter: blur(15px);
-      -webkit-backdrop-filter: blur(15px);
-      color: white;
-      padding: 30px 50px;
-      border-radius: 15px;
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      box-shadow: 0px 8px 30px rgba(0,0,0,0.5);
-      font-size: 1.1em;
-      font-weight: 600;
-      text-shadow: 0px 2px 5px rgba(0,0,0,0.3);
-      animation: fadeInOut 3s ease;
-      z-index: 1000;
-    }
-
-    @keyframes fadeInOut {
-      0% { opacity: 0; transform: translate(-50%, -60%); }
-      10% { opacity: 1; transform: translate(-50%, -50%); }
-      90% { opacity: 1; transform: translate(-50%, -50%); }
-      100% { opacity: 0; transform: translate(-50%, -60%); }
+      font-size: 16px;
     }
   </style>
 </head>
 <body>
-
-  <h1>Welcome to Spill It Out 🎉</h1>
-  <p>Share your thoughts, ideas, or secrets anonymously 💬</p>
-
-  <!-- 💌 Contact Form -->
-  <form id="contactForm" action="https://formspree.io/f/your_form_id_here" method="POST">
-    <input type="text" name="name" placeholder="Your Name" required>
-    <input type="email" name="email" placeholder="Your Email" required>
-    <textarea name="message" placeholder="Your Message..." rows="5" required></textarea>
-    <button type="submit">Send 🚀</button>
-  </form>
-
-  <!-- 🎉 Success Message -->
-  <div id="successMessage">✅ Message sent successfully!</div>
-
-  <footer>© 2025 Spill It Out | Made with 💙 on GitHub Pages</footer>
+  <div class="form-container">
+    <h2>Spill It Out 💬</h2>
+    <form id="contactForm">
+      <input type="text" id="name" placeholder="Your name (optional)">
+      <input type="email" id="email" placeholder="Your email">
+      <textarea id="message" rows="4" placeholder="Type your secret..."></textarea>
+      <button type="submit">Send</button>
+    </form>
+    <p id="status"></p>
+  </div>
 
   <script>
-    // ✅ Handle Form Submit with Success Popup
-    const form = document.getElementById('contactForm');
-    const successMessage = document.getElementById('successMessage');
-
-    form.addEventListener('submit', async (event) => {
+    document.getElementById("contactForm").addEventListener("submit", function(event){
       event.preventDefault();
-      const formData = new FormData(form);
-      const response = await fetch(form.action, {
-        method: form.method,
-        body: formData,
-        headers: { 'Accept': 'application/json' }
-      });
 
-      if (response.ok) {
-        form.reset();
-        successMessage.style.display = 'block';
-        setTimeout(() => {
-          successMessage.style.display = 'none';
-        }, 3000);
-      } else {
-        alert('Oops! Something went wrong. Please try again.');
+      const email = document.getElementById("email").value;
+      const message = document.getElementById("message").value;
+
+      if(!email || !message){
+        document.getElementById("status").textContent = "Please fill out all fields.";
+        return;
       }
+
+      // Simulate success (since GitHub Pages has no backend)
+      document.getElementById("status").textContent = "Message sent successfully ✅ (demo mode)";
+      document.getElementById("contactForm").reset();
     });
   </script>
-
 </body>
 </html>
-
